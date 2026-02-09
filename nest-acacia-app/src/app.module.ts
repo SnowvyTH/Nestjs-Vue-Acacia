@@ -6,9 +6,10 @@ import { GlobalHelpersModule } from './shared/global-helpers/global-helpers.modu
 import { UtilsModule } from './shared/utils/utils.module';
 import { CategoriesModule } from './categories/categories.module';
 
+
 @Module({
   imports: [CustomersModule, GlobalHelpersModule, UtilsModule, CategoriesModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, GlobalHelpersModule],
 })
 export class AppModule {}

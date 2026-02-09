@@ -1,4 +1,5 @@
 import { Controller, Get, HttpCode, Version } from '@nestjs/common';
+import { UtilsService } from 'src/shared/utils/utils.service';
 
 @Controller({
     version: '1',
@@ -6,6 +7,14 @@ import { Controller, Get, HttpCode, Version } from '@nestjs/common';
 })
 
 export class CustomersController {
+    constructor(private readonly utilsService: UtilsService) {}
+
+    // localhost:port/v1/customers/getdate
+    @Get('getdate')
+    @HttpCode(200)
+    getServerDate() {
+        return this.utilsService.getServerDate();
+    }
 
     // localhost:port/v1/customers
     @Get()
