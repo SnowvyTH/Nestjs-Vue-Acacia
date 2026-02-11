@@ -6,9 +6,10 @@ import { GlobalHelpersModule } from './shared/global-helpers/global-helpers.modu
 import { UtilsModule } from './shared/utils/utils.module';
 import { CategoriesModule } from './categories/categories.module';
 import { ConfigModule } from '@nestjs/config';
+import { PrismaModule } from './shared/db/prisma/prisma.module';
 
 @Module({
-  imports: [ConfigModule.forRoot(), CustomersModule, GlobalHelpersModule, UtilsModule, CategoriesModule],
+  imports: [ConfigModule.forRoot(), CustomersModule, GlobalHelpersModule, UtilsModule, CategoriesModule, PrismaModule],
   controllers: [AppController],
   providers: [AppService, GlobalHelpersModule],
 })
