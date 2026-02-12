@@ -15,6 +15,12 @@ export class CategoriesService {
     return this.prismaService.categories.findMany();
   }
 
+  findTwo() {
+    return this.prismaService.categories.findMany({
+      take: 2,
+    });
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} category`;
   }
